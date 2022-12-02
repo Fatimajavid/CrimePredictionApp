@@ -6,8 +6,7 @@ st.set_page_config(
 )
 
 # Create a page header
-st.header("Predicting Crime")
-st.header("Making Our Communities Safer One Model At a Time")
+st.header("Predicting Crime in Our Communities")
 
 # Create three columns 
 col1, col2 = st.columns([1,1])

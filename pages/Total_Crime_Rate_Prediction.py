@@ -25,7 +25,8 @@ def user_input_features():
     return features
 
 df = user_input_features()
-
+st.markdown("")
+st.markdown("")
 # Button to start prediction, Once make_prediction button is clicked...
 make_prediction = st.button('Submit to make prediction.')
 
@@ -35,9 +36,10 @@ model = pickle.load(open('models/crime_model.pkl', 'rb'))
 if make_prediction:
 #     # make a prediction
 
+    st.markdown("")
+
 # # Apply Model to Make Prediction
     prediction = model.predict(df)
 
-    st.header('Prediction')
-    st.write(prediction)
-    st.write('---')
+    st.success('Prediction')
+    st.markdown("Predicted total crime rate is " + str(prediction[0]) + ".")

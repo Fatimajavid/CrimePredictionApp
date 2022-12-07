@@ -6,9 +6,9 @@ st.set_page_config(
 )
 
 # Create a page header
-st.header("Predicting Crime in Our Communities")
+st.header(" 👮‍♀️ Predicting Crime in Our Communities 👮‍♂️ 📉")
 
-st.info('According to the Bureau of Justice Statistics, only 42% of violent crime is reported to authorities. Of that 42%, only 46% cases are cleared. Therefore, less than a quarter of violent crimes get solved.')
+st.warning('According to the Bureau of Justice Statistics, only 42% of violent crime is reported to authorities. Of that 42%, only 46% cases are cleared. Therefore, less than a quarter of violent crimes get solved.')
 
 # -- Create two columns
 col1, col2, col3 = st.columns([1, 1, 1])
@@ -18,7 +18,7 @@ with col1:
 
 
 with col2:
-    st.info('As DataCops 💻 👮‍♀️ 📁 we aim to build safer communities by understanding the demographic factors that affect crime. ')
+    st.info('As DataCops we aim to build safer communities by understanding the demographic factors that affect crime. ')
 
 with col3:
     st.image('https://50statespublicsafety.us/app/uploads/2018/05/Graphic-1.1.jpg')

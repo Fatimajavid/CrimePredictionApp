@@ -31,7 +31,7 @@ st.markdown("")
 make_prediction = st.button('Submit to make prediction.')
 
 # # Load the model you already created...
-model = pickle.load(open('models/crime_model_fatima.pkl', 'rb'))
+model = pickle.load(open('models/crime_model.pkl', 'rb'))
 
 if make_prediction:
     # make a prediction

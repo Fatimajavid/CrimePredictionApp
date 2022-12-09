@@ -6,7 +6,7 @@ st.set_page_config(
 )
 
 # Create a page header
-st.header(" 👮‍♀️ Predicting Crime in Our Communities 👮‍♂️ 📉")
+st.header(" 👮‍♀️ Predicting Crime in Our Communities 📉")
 
 # -- Create two columns
 col1, col2, col3 = st.columns([1, 1, 1])

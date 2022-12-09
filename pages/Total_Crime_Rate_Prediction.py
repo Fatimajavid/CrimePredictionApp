@@ -42,4 +42,4 @@ if make_prediction:
     prediction = model.predict(df)
 
     st.success('Prediction')
-    st.markdown("Predicted total crime rate is " + str(prediction[0]) + ".")
+    st.markdown("Predicted total crime rate is " + str(int(prediction[0])) + ".")

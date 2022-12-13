@@ -1,4 +1,4 @@
-# Crime Prediction Web App
+# Crime Prediction Web App (CUNY Tech Prep Project)
 
 ## Team name: Data Cops
 ## Team member: Bibata Rabba Idi, Fatima Javid, JianHui (Jake) Li

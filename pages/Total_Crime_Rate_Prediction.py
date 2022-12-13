@@ -11,11 +11,11 @@ st.set_page_config(
 st.header("Total Crime Prediction" )
 
 def user_input_features():
-    numbUrban = st.number_input('Enter number of people living in areas classified as urban')
-    numUnderPov = st.number_input('Enter number of people under the poverty level')
-    population = st.number_input('Enter the the population of the community')
-    numKidsBornNeverMar = st.number_input('Enter the number of kids born to unmarried parents')
-    numStreet = st.number_input('Enter the number of homeless people on the street')
+    numbUrban = st.number_input('Enter number of people living in areas classified as urban', 0, 1000000000000000)
+    numUnderPov = st.number_input('Enter number of people under the poverty level', 0, 1000000000000000)
+    population = st.number_input('Enter the the population of the community', 0, 1000000000000000)
+    numKidsBornNeverMar = st.number_input('Enter the number of kids born to unmarried parents', 0, 1000000000000000)
+    numStreet = st.number_input('Enter the number of homeless people on the street', 0, 1000000000000000)
     data = {'numbUrban': numbUrban,
             'numUnderPov': numUnderPov,
             'population': population,
@@ -41,5 +41,5 @@ if make_prediction:
 # # Apply Model to Make Prediction
     prediction = model.predict(df)
 
-    st.success('Prediction')
-    st.markdown("Predicted total crime rate is " + str(int(prediction[0])) + ".")
+    st.info('Prediction of Crime Rate')
+    st.success("Based on the values provided for the above features, the total number of crimes that are likely to occur in this community are  " + str(int(prediction[0])) + " crimes." )

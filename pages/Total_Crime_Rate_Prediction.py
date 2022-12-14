@@ -40,24 +40,14 @@ if make_prediction:
     st.markdown("")
     # Apply Model to Make Prediction
     prediction = model.predict(df)
+    st.success("Based on the values provided for the above features, the total number of crimes that are likely to occur in this community is  " + str(int(prediction[0])) + ".")
 
     # FBI API
     response = requests.get("https://api.usa.gov/crime/fbi/sapi/api/estimates/states/"+state+"/2020/2021?API_KEY="+st.secrets["api_key"])
     data_json = response.json()
     data = data_json['results']
-    total_crime = data[0]['homicide']+data[0]['rape_revised']+data[0]['robbery']+ \
-    data[0]['aggravated_assault']+data[0]['burglary']+data[0]['larceny']+ \
-    data[0]['motor_vehicle_theft']+data[0]['arson']
     
-    percentage_diff = (int(prediction[0]) - int(total_crime)) / int(total_crime)
-    if percentage_diff < 0:
-        percentage_diff = abs(round((percentage_diff*100), 2))
-        st.success("Based on the values provided for the above features, the total number of crimes that are likely to occur in this community is  " + str(int(prediction[0])) + " which is " + str(percentage_diff) + "% less than state level.")
-    else:
-        percentage_diff = abs(round((percentage_diff*100), 2))
-        st.warning("Based on the values provided for the above features, the total number of crimes that are likely to occur in this community is  " + str(int(prediction[0])) + " which is " + str(percentage_diff) + "% higher than state level.")
-
-    st.subheader("Compare crime statistics to state level")
+    st.subheader("Crime statistics at state level")
     st.markdown("State: " + data[0]['state_abbr'])
     st.markdown("Population: " + str(data[0]['population']))
     st.markdown("Murder: " + str(data[0]['homicide']))
@@ -68,4 +58,8 @@ if make_prediction:
     st.markdown("Larceny: " + str(data[0]['larceny']))
     st.markdown("Auto Theft: " + str(data[0]['motor_vehicle_theft']))
     st.markdown("Arson: " + str(data[0]['arson']))
+    total_crime = data[0]['homicide']+data[0]['rape_revised']+data[0]['robbery']+ \
+    data[0]['aggravated_assault']+data[0]['burglary']+data[0]['larceny']+ \
+    data[0]['motor_vehicle_theft']+data[0]['arson']
     st.markdown("Total crime: " + str(total_crime))
+    st.caption("The above was pull from FBI Crime Data Explorer at https://crime-data-explorer.fr.cloud.gov/pages/docApi.")

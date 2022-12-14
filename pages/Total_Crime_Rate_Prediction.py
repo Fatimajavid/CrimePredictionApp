@@ -2,7 +2,6 @@
 import streamlit as st
 import pandas as pd
 import pickle
-import config
 import requests
 import json
 

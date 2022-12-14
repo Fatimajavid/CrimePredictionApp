@@ -5,6 +5,6 @@
 
 ### Web App Description:
 
-This web app is made using Streamlit and it's for users to interact with the machine learning model we created [here]().
+This web app is made using Streamlit for users to interact with the machine learning model we created [here]().
 
-Click [here]() to access the web app.
+Click [here](https://fatimajavid-crimepredictionapp-homepage-lp2yy9.streamlit.app/) to access the web app.

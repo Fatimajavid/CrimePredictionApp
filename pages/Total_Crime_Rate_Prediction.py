@@ -49,8 +49,6 @@ if make_prediction:
     data[0]['aggravated_assault']+data[0]['burglary']+data[0]['larceny']+ \
     data[0]['motor_vehicle_theft']+data[0]['arson']
     
-    # st.success("Based on the values provided for the above features, the total number of crimes that are likely to occur in this community are  " + str(int(prediction[0])) + " crimes." )
-
     percentage_diff = (int(prediction[0]) - int(total_crime)) / int(total_crime)
     if percentage_diff < 0:
         percentage_diff = abs(round((percentage_diff*100), 2))
@@ -58,14 +56,6 @@ if make_prediction:
     else:
         percentage_diff = abs(round((percentage_diff*100), 2))
         st.warning("Based on the values provided for the above features, the total number of crimes that are likely to occur in this community is  " + str(int(prediction[0])) + " which is " + str(percentage_diff) + "% higher than state level.")
-
-    # percentage_diff = (int(prediction[0]) - int(total_crime)) / int(total_crime)
-    # if percentage_diff < 0:
-    #     percentage_diff = abs(round((percentage_diff*100), 2))
-    #     st.markdown("Your predicted total number of crime is " + str(percentage_diff) + "% less than state level.")
-    # else:
-    #     percentage_diff = abs(round((percentage_diff*100), 2))
-    #     st.markdown("Your predicted total number of crime is " + str(percentage_diff) + "% higher than state level.")
 
     st.subheader("Compare crime statistics to state level")
     st.markdown("State: " + data[0]['state_abbr'])

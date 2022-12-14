@@ -47,7 +47,7 @@ if make_prediction:
     data_json = response.json()
     data = data_json['results']
     
-    st.subheader("Crime statistics at state level")
+    st.subheader("Crime statistics at state level (2021)")
     st.markdown("State: " + data[0]['state_abbr'])
     st.markdown("Population: " + str(data[0]['population']))
     st.markdown("Murder: " + str(data[0]['homicide']))

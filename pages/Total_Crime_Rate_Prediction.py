@@ -15,11 +15,11 @@ st.header("Total Crime Prediction" )
 state = st.selectbox('State', ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'])
 
 def user_input_features():
-    numbUrban = st.number_input('Enter number of people living in areas classified as urban')
-    numUnderPov = st.number_input('Enter number of people under the poverty level')
-    population = st.number_input('Enter the the population of the community')
-    numKidsBornNeverMar = st.number_input('Enter the number of kids born to unmarried parents')
-    numStreet = st.number_input('Enter the number of homeless people on the street')
+    numbUrban = st.number_input('Enter number of people living in areas classified as urban', min_value=0)
+    numUnderPov = st.number_input('Enter number of people under the poverty level', min_value=0)
+    population = st.number_input('Enter the the population of the community', min_value=0)
+    numKidsBornNeverMar = st.number_input('Enter the number of kids born to unmarried parents', min_value=0)
+    numStreet = st.number_input('Enter the number of homeless people on the street', min_value=0)
     data = {'numbUrban': numbUrban,
             'numUnderPov': numUnderPov,
             'population': population,
